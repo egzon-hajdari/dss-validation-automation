@@ -1,0 +1,20 @@
+{
+  "name": "dss-validation-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "UI test automation framework for DSS (Playwright + TypeScript)",
+  "type": "commonjs",
+  "scripts": {
+    "test": "playwright test",
+    "test:prod": "TEST_ENV=prod playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.3",
+    "typescript": "^7.0.2"
+  }
+}
