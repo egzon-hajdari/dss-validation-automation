@@ -1,5 +1,6 @@
 import { test as base } from '@playwright/test';
 import { SideMenu } from '../components/SideMenu';
+import { ErrorPage } from '../pages/ErrorPage';
 import { HomePage } from '../pages/HomePage';
 import { ValidateSignaturePage } from '../pages/ValidateSignaturePage';
 import { ValidationResultsPage } from '../pages/ValidationResultsPage';
@@ -9,6 +10,7 @@ type Fixtures = {
   homePage: HomePage;
   validateSignaturePage: ValidateSignaturePage;
   validationResultsPage: ValidationResultsPage;
+  errorPage: ErrorPage;
 };
 
 /**
@@ -28,6 +30,9 @@ export const test = base.extend<Fixtures>({
   },
   validationResultsPage: async ({ page }, use) => {
     await use(new ValidationResultsPage(page));
+  },
+  errorPage: async ({ page }, use) => {
+    await use(new ErrorPage(page));
   },
 });
 
